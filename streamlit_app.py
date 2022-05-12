@@ -37,10 +37,8 @@ try:
     streamlit.error("Please select a fruit to get information")
   else:
     fruityvice_response = get_fruityvice_data(fruit_choice)
-    # Normalize fruityvice
-    fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
     # output to screen
-    streamlit.dataframe(fruityvice_normalized)
+    streamlit.dataframe(fruityvice_response)
 except URLError as e:
   streamlit.error()
 
